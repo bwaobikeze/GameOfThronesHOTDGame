@@ -11,9 +11,11 @@
 		3C0292BF2AB4507500F6445F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0292BE2AB4507500F6445F /* ContentView.swift */; };
 		3C0292C12AB4507700F6445F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0292C02AB4507700F6445F /* Assets.xcassets */; };
 		3C0292C42AB4507700F6445F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0292C32AB4507700F6445F /* Preview Assets.xcassets */; };
-		3C0292CE2AB4507800F6445F /* Exercise4_Waobikeze_BrianTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0292CD2AB4507800F6445F /* Exercise4_Waobikeze_BrianTests.swift */; };
-		3C0292D82AB4507800F6445F /* Exercise4_Waobikeze_BrianUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0292D72AB4507800F6445F /* Exercise4_Waobikeze_BrianUITests.swift */; };
-		3C0292DA2AB4507800F6445F /* Exercise4_Waobikeze_BrianUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0292D92AB4507800F6445F /* Exercise4_Waobikeze_BrianUITestsLaunchTests.swift */; };
+		3C0292E72AB5556000F6445F /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0292E62AB5556000F6445F /* GameStartView.swift */; };
+		3C0292E92AB555EC00F6445F /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0292E82AB555EC00F6445F /* PointsView.swift */; };
+		3C0292ED2AB5566700F6445F /* MainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0292EC2AB5566700F6445F /* MainGameView.swift */; };
+		3C6EDF632AB582A600FA5A55 /* dracarys_hotd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C6EDF612AB582A600FA5A55 /* dracarys_hotd.mp3 */; };
+		3C6EDF642AB582A600FA5A55 /* dracarys1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C6EDF622AB582A600FA5A55 /* dracarys1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +42,12 @@
 		3C0292C02AB4507700F6445F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C0292C32AB4507700F6445F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C0292C92AB4507800F6445F /* Exercise4_Waobikeze_BrianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Exercise4_Waobikeze_BrianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C0292CD2AB4507800F6445F /* Exercise4_Waobikeze_BrianTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise4_Waobikeze_BrianTests.swift; sourceTree = "<group>"; };
 		3C0292D32AB4507800F6445F /* Exercise4_Waobikeze_BrianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Exercise4_Waobikeze_BrianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C0292D72AB4507800F6445F /* Exercise4_Waobikeze_BrianUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise4_Waobikeze_BrianUITests.swift; sourceTree = "<group>"; };
-		3C0292D92AB4507800F6445F /* Exercise4_Waobikeze_BrianUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise4_Waobikeze_BrianUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3C0292E62AB5556000F6445F /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
+		3C0292E82AB555EC00F6445F /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
+		3C0292EC2AB5566700F6445F /* MainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameView.swift; sourceTree = "<group>"; };
+		3C6EDF612AB582A600FA5A55 /* dracarys_hotd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dracarys_hotd.mp3; sourceTree = "<group>"; };
+		3C6EDF622AB582A600FA5A55 /* dracarys1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dracarys1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				3C0292BB2AB4507500F6445F /* Exercise4_Waobikeze_Brian */,
-				3C0292CC2AB4507800F6445F /* Exercise4_Waobikeze_BrianTests */,
-				3C0292D62AB4507800F6445F /* Exercise4_Waobikeze_BrianUITests */,
 				3C0292BA2AB4507500F6445F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,10 +96,14 @@
 		3C0292BB2AB4507500F6445F /* Exercise4_Waobikeze_Brian */ = {
 			isa = PBXGroup;
 			children = (
+				3C6EDF602AB5824E00FA5A55 /* Sounds */,
 				3C0292BC2AB4507500F6445F /* Exercise4_Waobikeze_BrianApp.swift */,
 				3C0292BE2AB4507500F6445F /* ContentView.swift */,
 				3C0292C02AB4507700F6445F /* Assets.xcassets */,
 				3C0292C22AB4507700F6445F /* Preview Content */,
+				3C0292E62AB5556000F6445F /* GameStartView.swift */,
+				3C0292E82AB555EC00F6445F /* PointsView.swift */,
+				3C0292EC2AB5566700F6445F /* MainGameView.swift */,
 			);
 			path = Exercise4_Waobikeze_Brian;
 			sourceTree = "<group>";
@@ -110,21 +116,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		3C0292CC2AB4507800F6445F /* Exercise4_Waobikeze_BrianTests */ = {
+		3C6EDF602AB5824E00FA5A55 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				3C0292CD2AB4507800F6445F /* Exercise4_Waobikeze_BrianTests.swift */,
+				3C6EDF612AB582A600FA5A55 /* dracarys_hotd.mp3 */,
+				3C6EDF622AB582A600FA5A55 /* dracarys1.mp3 */,
 			);
-			path = Exercise4_Waobikeze_BrianTests;
-			sourceTree = "<group>";
-		};
-		3C0292D62AB4507800F6445F /* Exercise4_Waobikeze_BrianUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3C0292D72AB4507800F6445F /* Exercise4_Waobikeze_BrianUITests.swift */,
-				3C0292D92AB4507800F6445F /* Exercise4_Waobikeze_BrianUITestsLaunchTests.swift */,
-			);
-			path = Exercise4_Waobikeze_BrianUITests;
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +230,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C0292C42AB4507700F6445F /* Preview Assets.xcassets in Resources */,
+				3C6EDF642AB582A600FA5A55 /* dracarys1.mp3 in Resources */,
 				3C0292C12AB4507700F6445F /* Assets.xcassets in Resources */,
+				3C6EDF632AB582A600FA5A55 /* dracarys_hotd.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +259,9 @@
 			files = (
 				3C0292BF2AB4507500F6445F /* ContentView.swift in Sources */,
 				3C0292BD2AB4507500F6445F /* Exercise4_Waobikeze_BrianApp.swift in Sources */,
+				3C0292E72AB5556000F6445F /* GameStartView.swift in Sources */,
+				3C0292E92AB555EC00F6445F /* PointsView.swift in Sources */,
+				3C0292ED2AB5566700F6445F /* MainGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C0292CE2AB4507800F6445F /* Exercise4_Waobikeze_BrianTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +276,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C0292DA2AB4507800F6445F /* Exercise4_Waobikeze_BrianUITestsLaunchTests.swift in Sources */,
-				3C0292D82AB4507800F6445F /* Exercise4_Waobikeze_BrianUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
