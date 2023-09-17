@@ -12,11 +12,11 @@ struct ContentView: View {
         TabView {
             GameStartView()
                 .tabItem {
-                //Image("0_fire_off").resizable()
+                Image("fire_on")
                 Text("Game")
             }
             PointsView().tabItem {
-                //Image("0_score_off").resizable()
+                Image("score_on")
                 Text("Points")
             }
         }
