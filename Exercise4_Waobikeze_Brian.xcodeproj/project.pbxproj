@@ -13,6 +13,8 @@
 		3C0292C42AB4507700F6445F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C0292C32AB4507700F6445F /* Preview Assets.xcassets */; };
 		3C0292E72AB5556000F6445F /* GameStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0292E62AB5556000F6445F /* GameStartView.swift */; };
 		3C0292E92AB555EC00F6445F /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0292E82AB555EC00F6445F /* PointsView.swift */; };
+		3C5E95C62AB6D3B7003112C3 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5E95C52AB6D3B7003112C3 /* TitleScreen.swift */; };
+		3C5E95C82AB6D634003112C3 /* House of the Dragon Opening Credits 4K  Season 1 (HBO)  Game Of Thrones Extras.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C5E95C72AB6D634003112C3 /* House of the Dragon Opening Credits 4K  Season 1 (HBO)  Game Of Thrones Extras.mp3 */; };
 		3C6EDF632AB582A600FA5A55 /* dracarys_hotd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C6EDF612AB582A600FA5A55 /* dracarys_hotd.mp3 */; };
 		3C6EDF642AB582A600FA5A55 /* dracarys1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C6EDF622AB582A600FA5A55 /* dracarys1.mp3 */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,8 @@
 		3C0292D32AB4507800F6445F /* Exercise4_Waobikeze_BrianUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Exercise4_Waobikeze_BrianUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C0292E62AB5556000F6445F /* GameStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartView.swift; sourceTree = "<group>"; };
 		3C0292E82AB555EC00F6445F /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
+		3C5E95C52AB6D3B7003112C3 /* TitleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreen.swift; sourceTree = "<group>"; };
+		3C5E95C72AB6D634003112C3 /* House of the Dragon Opening Credits 4K  Season 1 (HBO)  Game Of Thrones Extras.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "House of the Dragon Opening Credits 4K  Season 1 (HBO)  Game Of Thrones Extras.mp3"; sourceTree = "<group>"; };
 		3C6EDF612AB582A600FA5A55 /* dracarys_hotd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dracarys_hotd.mp3; sourceTree = "<group>"; };
 		3C6EDF622AB582A600FA5A55 /* dracarys1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dracarys1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +105,7 @@
 				3C0292C22AB4507700F6445F /* Preview Content */,
 				3C0292E62AB5556000F6445F /* GameStartView.swift */,
 				3C0292E82AB555EC00F6445F /* PointsView.swift */,
+				3C5E95C52AB6D3B7003112C3 /* TitleScreen.swift */,
 			);
 			path = Exercise4_Waobikeze_Brian;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 		3C6EDF602AB5824E00FA5A55 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				3C5E95C72AB6D634003112C3 /* House of the Dragon Opening Credits 4K  Season 1 (HBO)  Game Of Thrones Extras.mp3 */,
 				3C6EDF612AB582A600FA5A55 /* dracarys_hotd.mp3 */,
 				3C6EDF622AB582A600FA5A55 /* dracarys1.mp3 */,
 			);
@@ -229,6 +235,7 @@
 				3C0292C42AB4507700F6445F /* Preview Assets.xcassets in Resources */,
 				3C6EDF642AB582A600FA5A55 /* dracarys1.mp3 in Resources */,
 				3C0292C12AB4507700F6445F /* Assets.xcassets in Resources */,
+				3C5E95C82AB6D634003112C3 /* House of the Dragon Opening Credits 4K  Season 1 (HBO)  Game Of Thrones Extras.mp3 in Resources */,
 				3C6EDF632AB582A600FA5A55 /* dracarys_hotd.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +263,7 @@
 			files = (
 				3C0292BF2AB4507500F6445F /* ContentView.swift in Sources */,
 				3C0292BD2AB4507500F6445F /* Exercise4_Waobikeze_BrianApp.swift in Sources */,
+				3C5E95C62AB6D3B7003112C3 /* TitleScreen.swift in Sources */,
 				3C0292E72AB5556000F6445F /* GameStartView.swift in Sources */,
 				3C0292E92AB555EC00F6445F /* PointsView.swift in Sources */,
 			);

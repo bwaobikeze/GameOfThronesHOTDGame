@@ -8,6 +8,8 @@
 import SwiftUI
 import AVKit
 
+
+//extra feature
 class SoundManager{
     static let instance = SoundManager()
     var player: AVAudioPlayer?
@@ -20,6 +22,17 @@ class SoundManager{
         }catch let error{
             print("Error playing sound. \(error.localizedDescription)")
         }
+        
+    }
+    func playSound2(){
+        guard let url = Bundle.main.url(forResource: "House of the Dragon Opening Credits 4K  Season 1 (HBO)  Game Of Thrones Extras", withExtension: ".mp3") else{return}
+        do{
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        }catch let error{
+            print("Error playing sound. \(error.localizedDescription)")
+        }
+        
     }
 }
 struct GameStartView: View {
