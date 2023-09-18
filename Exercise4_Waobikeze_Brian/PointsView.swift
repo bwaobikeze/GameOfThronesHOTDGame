@@ -10,6 +10,12 @@ import SwiftUI
 struct PointsView: View {
     @Environment(\.verticalSizeClass) var heightSize: UserInterfaceSizeClass?
     @Environment(\.horizontalSizeClass) var widthSize: UserInterfaceSizeClass?
+    let Player1Points: [Image] = [Image("0_HOD_logo"),
+                                    Image("0_HOD_logo"),
+                                    Image("0_HOD_logo")]
+    let Player2Points: [Image] = [Image("0_HOD_logo"),
+                                    Image("0_HOD_logo"),
+                                    Image("0_HOD_logo")]
     var body: some View {
         if heightSize == .compact{
             VStack(spacing: 10) {
@@ -18,17 +24,17 @@ struct PointsView: View {
                     VStack(spacing: 20 ) {
                         Text("Player 1").font(Font.custom("Academy Engraved LET Plain:1.0", size: 50))
                         HStack(spacing: 10) {
-                            Image("0_HOD_logo").resizable().scaledToFit().frame(width: 100, height: 100)
-                            Image("0_HOD_logo").resizable().scaledToFit().frame(width: 100, height: 100)
-                            Image("0_HOD_logo").resizable().scaledToFit().frame(width: 100, height: 100)
+                            ForEach(Player1Points.indices, id: \.self){index in
+                                Player1Points[index].resizable().scaledToFit().frame(width: 100, height: 100).opacity(0.3)
+                            }
                         }
                     }
                     VStack(spacing: 20 ) {
                         Text("Player 2").font(Font.custom("Academy Engraved LET Plain:1.0", size: 50))
                         HStack(spacing: 10) {
-                            Image("0_HOD_logo").resizable().scaledToFit().frame(width: 100, height: 100)
-                            Image("0_HOD_logo").resizable().scaledToFit().frame(width: 100, height: 100)
-                            Image("0_HOD_logo").resizable().scaledToFit().frame(width: 100, height: 100)
+                            ForEach(Player2Points.indices, id: \.self){index in
+                                Player2Points[index].resizable().scaledToFit().frame(width: 100, height: 100).opacity(0.3)
+                            }
                         }
                     }
                 }
@@ -39,15 +45,15 @@ struct PointsView: View {
                 Image("0_HOD_text").resizable().scaledToFit()
                 Text("Player 1").font(Font.custom("Academy Engraved LET Plain:1.0", size: 50))
                 HStack(spacing: 10) {
-                    Image("0_HOD_logo").resizable().scaledToFit().frame(width: 100, height: 100)
-                    Image("0_HOD_logo").resizable().scaledToFit().frame(width: 100, height: 100)
-                    Image("0_HOD_logo").resizable().scaledToFit().frame(width: 100, height: 100)
+                    ForEach(Player1Points.indices, id: \.self){index in
+                        Player1Points[index].resizable().scaledToFit().frame(width: 100, height: 100).opacity(0.3)
+                     }
                 }
                 Text("Player 2").font(Font.custom("Academy Engraved LET Plain:1.0", size: 50))
                 HStack(spacing: 10) {
-                    Image("0_HOD_logo").resizable().scaledToFit().frame(width: 100, height: 100)
-                    Image("0_HOD_logo").resizable().scaledToFit().frame(width: 100, height: 100)
-                    Image("0_HOD_logo").resizable().scaledToFit().frame(width: 100, height: 100)
+                    ForEach(Player2Points.indices, id: \.self){index in
+                        Player2Points[index].resizable().scaledToFit().frame(width: 100, height: 100).opacity(0.3)
+                     }
                 }
                 Spacer()
             }.padding(.top)
