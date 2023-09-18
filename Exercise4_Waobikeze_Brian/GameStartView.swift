@@ -52,6 +52,9 @@ struct GameStartView: View {
     @State var Player2Iter = 0
     @State var Player1PointIncrease = 0
     @State var Player2PointIncrease = 0
+    @State var Player1ImageChange = 0
+    @State var Player2ImageChnage = 0
+    @ObservedObject var pointsArrays = PointsArrays()
     
     @State var GameMessage: Text = Text("Prepare for the Battle!")
     @Environment(\.verticalSizeClass) var heightSize: UserInterfaceSizeClass?
@@ -106,6 +109,7 @@ struct GameStartView: View {
                         }){
                             Image("0_crossing-swords").resizable().scaledToFit().frame(width: 150, height: 150)
                         }
+                        .disabled(Player1PointIncrease == 3 || Player2PointIncrease == 3)
                     }
                 }
             }
@@ -137,7 +141,6 @@ struct GameStartView: View {
                                Image("0_refresh_arrows").resizable().scaledToFit().frame(width: 150, height: 150)
                            }
                            
-                           
                            Button(action:{
                                //action
                                SoundManager.instance.playSound()
@@ -145,6 +148,7 @@ struct GameStartView: View {
                            }){
                                Image("0_crossing-swords").resizable().scaledToFit().frame(width: 150, height: 150)
                            }
+                           .disabled(Player1PointIncrease == 3 || Player2PointIncrease == 3)
                        }
                        Spacer()
                        
@@ -169,16 +173,44 @@ struct GameStartView: View {
         if Player1Iter == Player2Iter{
             fight()
         }
-        WhoIsWinner(P1: Player1Iter, P2: Player2Iter)
+        WhoIsWinner(P1Rank: Player1Iter, P2Rank: Player2Iter)
     }
-    func WhoIsWinner(P1:Int, P2:Int){
-        if DragsWithRank[P1].rankNum > DragsWithRank[P2].rankNum{
-            GameMessage=Text("Player 1 Wins the round!")
+    func WhoIsWinner(P1Rank:Int, P2Rank:Int){
+        if DragsWithRank[P1Rank].rankNum > DragsWithRank[P2Rank].rankNum{
+            setFirstImageOpacityToOne(forPlayer: 1, index:  Player1ImageChange)
+            Player1ImageChange += 1
+            Player1PointIncrease += 1
+            if Player1PointIncrease == 3 {
+                GameMessage = Text("Player 1 Wins the game!")
+            } else {
+                GameMessage = Text("Player 1 Wins the round!")
+            }
         }
         else{
-            GameMessage=Text("Player 2 Wins the round!")
+            setFirstImageOpacityToOne(forPlayer: 2, index: Player2ImageChnage)
+            Player2ImageChnage += 1
+             Player2PointIncrease += 1
+             if Player2PointIncrease == 3 {
+                 GameMessage = Text("Player 2 Wins the game!")
+             } else {
+                 GameMessage = Text("Player 2 Wins the round!")
+             }
         }
     }
+    
+    
+    func setFirstImageOpacityToOne(forPlayer player: Int, index: Int) {
+        var pointsArray: [Image]
+
+        if player == 1 {
+            pointsArray = pointsArrays.Player1Points
+        } else {
+            pointsArray = pointsArrays.Player2Points
+        }
+
+    }
+    
+    
     
 }
 struct GameStartView_Previews: PreviewProvider {

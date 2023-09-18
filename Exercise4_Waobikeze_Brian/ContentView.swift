@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var player1Points: [Image] = []
+        @State private var player2Points: [Image] = []
     var body: some View {
         TabView {
             GameStartView()
