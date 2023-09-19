@@ -9,13 +9,20 @@ import SwiftUI
 import AVKit
 struct TitleScreen: View {
     @State private var isGameStartViewActive = false
-
+    @State private var isRotating = 0.0
     var body: some View {
         NavigationView {
             VStack {
                 Image("0_HOD_logo")
                     .resizable()
                     .scaledToFit()
+                    .rotationEffect(.degrees(isRotating))
+                    .onAppear {
+                        withAnimation(.linear(duration: 1)
+                                                .speed(0.1).repeatForever(autoreverses: false)) {
+                                            isRotating = 360.0
+                                        }
+                    }
                 Image("0_HOD_text")
                     .resizable()
                     .scaledToFit()

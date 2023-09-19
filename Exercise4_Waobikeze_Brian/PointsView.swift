@@ -6,19 +6,18 @@
 //
 
 import SwiftUI
-class PointsArrays: ObservableObject {
-    @Published var Player1Points: [Image] = [Image("0_HOD_logo"),
-                                    Image("0_HOD_logo"),
-                                    Image("0_HOD_logo")]
-    @Published var Player2Points: [Image] = [Image("0_HOD_logo"),
-                                    Image("0_HOD_logo"),
-                                    Image("0_HOD_logo")]
+class PlayerPoint: ObservableObject {
+    @Published var player1Points = 0
+    @Published var player2Points = 0
 }
 struct PointsView: View {
     @Environment(\.verticalSizeClass) var heightSize: UserInterfaceSizeClass?
     @Environment(\.horizontalSizeClass) var widthSize: UserInterfaceSizeClass?
-    @ObservedObject var arrpoints = PointsArrays()
+    @ObservedObject var arrpoints: PlayerPoint
+
+    
     var body: some View {
+
         if heightSize == .compact{
             VStack(spacing: 10) {
                 Image("0_HOD_text").resizable().scaledToFit()
@@ -26,17 +25,17 @@ struct PointsView: View {
                     VStack(spacing: 20 ) {
                         Text("Player 1").font(Font.custom("Academy Engraved LET Plain:1.0", size: 50))
                         HStack(spacing: 10) {
-                            ForEach(arrpoints.Player1Points.indices, id: \.self){index in
-                                arrpoints.Player1Points[index].resizable().scaledToFit().frame(width: 100, height: 100).opacity(0.3)
-                            }
+                            PointImage(isActive: arrpoints.player1Points >= 1)
+                            PointImage(isActive: arrpoints.player1Points >= 2)
+                            PointImage(isActive: arrpoints.player1Points >= 3)
                         }
                     }
                     VStack(spacing: 20 ) {
                         Text("Player 2").font(Font.custom("Academy Engraved LET Plain:1.0", size: 50))
                         HStack(spacing: 10) {
-                            ForEach(arrpoints.Player2Points.indices, id: \.self){index in
-                                arrpoints.Player2Points[index].resizable().scaledToFit().frame(width: 100, height: 100).opacity(0.3)
-                            }
+                            PointImage(isActive: arrpoints.player2Points >= 1)
+                            PointImage(isActive: arrpoints.player2Points >= 2)
+                            PointImage(isActive: arrpoints.player2Points >= 3)
                         }
                     }
                 }
@@ -47,15 +46,15 @@ struct PointsView: View {
                 Image("0_HOD_text").resizable().scaledToFit()
                 Text("Player 1").font(Font.custom("Academy Engraved LET Plain:1.0", size: 50))
                 HStack(spacing: 10) {
-                    ForEach(arrpoints.Player1Points.indices, id: \.self){index in
-                        arrpoints.Player1Points[index].resizable().scaledToFit().frame(width: 100, height: 100).opacity(0.3)
-                     }
+                    PointImage(isActive: arrpoints.player1Points >= 1)
+                    PointImage(isActive: arrpoints.player1Points >= 2)
+                    PointImage(isActive: arrpoints.player1Points >= 3)
                 }
                 Text("Player 2").font(Font.custom("Academy Engraved LET Plain:1.0", size: 50))
                 HStack(spacing: 10) {
-                    ForEach(arrpoints.Player2Points.indices, id: \.self){index in
-                        arrpoints.Player2Points[index].resizable().scaledToFit().frame(width: 100, height: 100).opacity(0.3)
-                     }
+                    PointImage(isActive: arrpoints.player2Points >= 1)
+                    PointImage(isActive: arrpoints.player2Points >= 2)
+                    PointImage(isActive: arrpoints.player2Points >= 3)
                 }
                 Spacer()
             }.padding(.top)
@@ -66,9 +65,19 @@ struct PointsView: View {
 
     }
 }
+struct PointImage: View {
+    let isActive: Bool
 
-struct PointsView_Previews: PreviewProvider {
-    static var previews: some View {
-        PointsView()
+    var body: some View {
+        Image(isActive ? "0_HOD_logo" : "0_HOD_logo")
+            .resizable().scaledToFit().frame(width: 100, height: 100)
+            .opacity(isActive ? 1.0 : 0.3)
     }
 }
+
+//struct PointsView_Previews: PreviewProvider {
+//    @ObservedObject var pointsForPlayers = PlayerPoint()
+//    static var previews: some View {
+//        PointsView(arrpoints: pointsForPlayers)
+//    }
+//}
