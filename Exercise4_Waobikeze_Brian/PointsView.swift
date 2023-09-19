@@ -75,9 +75,3 @@ struct PointImage: View {
     }
 }
 
-//struct PointsView_Previews: PreviewProvider {
-//    @ObservedObject var pointsForPlayers = PlayerPoint()
-//    static var previews: some View {
-//        PointsView(arrpoints: pointsForPlayers)
-//    }
-//}

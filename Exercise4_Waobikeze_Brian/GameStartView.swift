@@ -53,6 +53,7 @@ struct GameStartView: View {
     @State var Player1PointIncrease = 0
     @State var Player2PointIncrease = 0
     @ObservedObject var pointsForPlayers: PlayerPoint
+    @State var isRestarting = false 
     
     @State var GameMessage: Text = Text("Prepare for the Battle!")
     @Environment(\.verticalSizeClass) var heightSize: UserInterfaceSizeClass?
@@ -162,9 +163,14 @@ struct GameStartView: View {
        
     }
     func retart(){
+        isRestarting = true
         Player1Iter = 0
         Player2Iter = 0
         GameMessage = Text("Prepare for the Battle!")
+        pointsForPlayers.player1Points = 0
+        pointsForPlayers.player2Points = 0
+        
+        isRestarting = false
     }
     func fight(){
         Player1Iter = Int.random(in: 1..<Dragons.count)
@@ -209,8 +215,4 @@ struct GameStartView: View {
     
     
 }
-//struct GameStartView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GameStartView()
-//    }
-//}
+
