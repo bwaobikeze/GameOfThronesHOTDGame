@@ -17,11 +17,12 @@ struct TitleScreen: View {
                     .resizable()
                     .scaledToFit()
                     .rotationEffect(.degrees(isRotating))
+                ////extra feature: adding spin animation/sound
                     .onAppear {
                         withAnimation(.linear(duration: 1)
-                                                .speed(0.1).repeatForever(autoreverses: false)) {
-                                            isRotating = 360.0
-                                        }
+                        .speed(0.1).repeatForever(autoreverses: false)) {
+                            isRotating = 360.0
+                        }
                     }
                 Image("0_HOD_text")
                     .resizable()
@@ -41,11 +42,10 @@ struct TitleScreen: View {
                     SoundManager.instance.stopSound()
                     isGameStartViewActive = true
                 }) {
-                    Text("Start Game")
+                    Text("Start Game").font(Font.custom("Academy Engraved LET Plain:1.0", size: 40))
                 }
                 .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
+                .foregroundColor(.brown)
                 .cornerRadius(10)
                 .padding()
             }
