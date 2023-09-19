@@ -34,6 +34,16 @@ class SoundManager{
         }
         
     }
+    func playSound3(){
+        guard let url = Bundle.main.url(forResource: "dracarys_hotd", withExtension: ".mp3") else{return}
+        do{
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        }catch let error{
+            print("Error playing sound. \(error.localizedDescription)")
+        }
+        
+    }
     func stopSound() {
         player?.stop()
     }
@@ -62,6 +72,7 @@ struct GameStartView: View {
     @State var DragsWithRank: [DrogonImagesAndRank] = []
     
     let Dragons: [UIImage] = [UIImage(imageLiteralResourceName: "0_HOD_logo"),UIImage(imageLiteralResourceName: "3_Viserion"),UIImage(imageLiteralResourceName: "3_Drogon"),UIImage(imageLiteralResourceName: "3_Stormcloud"),UIImage(imageLiteralResourceName: "2_Quicksilver"),UIImage(imageLiteralResourceName: "2_Meleys"),UIImage(imageLiteralResourceName: "2_Silverwing"),UIImage(imageLiteralResourceName: "1_Sheepstealer"),UIImage(imageLiteralResourceName: "1_Meraxes"),UIImage(imageLiteralResourceName: "1_Balerion")]
+    
     init(pointsForPlayers: PlayerPoint) {
         self.pointsForPlayers = pointsForPlayers
         var dragsWithRank: [DrogonImagesAndRank] = []
@@ -96,6 +107,7 @@ struct GameStartView: View {
                     HStack(spacing: 20) {
                         Button(action:{
                             //action
+                            SoundManager.instance.playSound3()
                             retart()
                         }){
                             Image("0_refresh_arrows").resizable().scaledToFit().frame(width: 150, height: 150)
@@ -136,6 +148,7 @@ struct GameStartView: View {
                        HStack(spacing: 20) {
                            Button(action:{
                                //action
+                               SoundManager.instance.playSound3()
                                retart()
                            }){
                                Image("0_refresh_arrows").resizable().scaledToFit().frame(width: 150, height: 150)
@@ -172,6 +185,7 @@ struct GameStartView: View {
         
         isRestarting = false
     }
+    
     func fight(){
         Player1Iter = Int.random(in: 1..<Dragons.count)
         Player2Iter = Int.random(in: 1..<Dragons.count)
@@ -180,6 +194,7 @@ struct GameStartView: View {
         }
         WhoIsWinner(P1Rank: Player1Iter, P2Rank: Player2Iter)
     }
+    
     func WhoIsWinner(P1Rank:Int, P2Rank:Int){
         if DragsWithRank[P1Rank].rankNum > DragsWithRank[P2Rank].rankNum{
             Player1PointIncrease += 1
